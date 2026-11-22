@@ -1,7 +1,6 @@
 import sys
 
 def get_scores():
-    # Use command line arguments if provided (for Jenkins), otherwise ask the user
     if len(sys.argv) > 1:
         return [float(x) for x in sys.argv[1:]]
     
@@ -15,6 +14,11 @@ if __name__ == "__main__":
     else:
         total = sum(scores)
         avg = total / len(scores)
+        maximum = max(scores)
+        minimum = min(scores)
+        
         print(f"Scores: {scores}")
         print(f"Sum: {total}")
         print(f"Average: {avg:.2f}")
+        print(f"Maximum: {maximum}")
+        print(f"Minimum: {minimum}")
